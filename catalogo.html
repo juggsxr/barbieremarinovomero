@@ -3,107 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalogo | Barbiere Vomero Marino</title>
+    <title>Catalogo Clienti | Barbiere Vomero Marino</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-/* Questo codice rende la mappa di Google scura e coordinata col sito */
-.map-container iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    filter: grayscale(1) invert(92%) contrast(83%); /* Effetto Dark Mode */
-    border: 1px solid #222;
-}
-
-        .contact-grid {
+        /* Griglia specifica per il Catalogo */
+        .catalogo-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
             margin-top: 40px;
         }
 
-        .contact-info {
-            text-align: left;
-        }
-
-        .info-card {
+        .guest-card {
             background: var(--grigio);
-            padding: 30px;
             border: 1px solid #222;
-            margin-bottom: 20px;
-            transition: 0.3s;
+            overflow: hidden;
+            transition: 0.4s;
+            position: relative;
         }
 
-        .info-card:hover {
+        .guest-card:hover {
             border-color: var(--oro);
+            transform: translateY(-10px);
         }
 
-        .info-card h3 {
-            color: var(--oro);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
+        .guest-image {
+            width: 100%;
+            height: 450px; /* Altezza fissa per un look editoriale */
+            overflow: hidden;
         }
 
-        .info-card p, .info-card a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1rem;
-            margin: 0;
-            display: block;
-        }
-
-        .map-container {
-            border: 1px solid #222;
-            height: 100%;
-            min-height: 400px;
-        }
-
-        iframe {
+        .guest-image img {
             width: 100%;
             height: 100%;
-            border: 0;
-            filter: grayscale(1) invert(1) contrast(1.2); /* Mappa scura per matchare il sito */
+            object-fit: cover; /* Taglia l'immagine senza distorcerla */
+            filter: grayscale(0.5);
+            transition: 0.5s;
         }
 
-        .social-links {
-            margin-top: 20px;
-            display: flex;
-            gap: 15px;
+        .guest-card:hover img {
+            filter: grayscale(0);
+            scale: 1.05;
         }
 
-        .social-btn {
-            background: #222;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 0.8rem;
+        .guest-info {
+            padding: 20px;
+            text-align: left;
+            background: #0a0a0a;
+            border-top: 1px solid #222;
+        }
+
+        .guest-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--oro);
+            margin: 0;
             text-transform: uppercase;
-            transition: 0.3s;
         }
 
-        .social-btn:hover {
-            background: var(--oro);
-            color: black;
-        }
-
-        @media (max-width: 850px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            .map-container {
-                height: 300px;
-            }
+        .guest-desc {
+            color: var(--testo-opaco);
+            font-size: 0.8rem;
+            margin-top: 5px;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
-    <header>
+
+<header>
     <a href="index.html" class="logo">Barbiere Vomero <span style="font-weight:300">MARINO</span></a>
     <nav>
         <a href="index.html">Home</a>
@@ -111,27 +83,49 @@
         <a href="prenota.html">Prenota</a>
         <a href="contatti.html">Contatti</a>
         <a href="catalogo.html" style="color:var(--oro)">Catalogo</a>
+        <a href="tel:+390815560080" class="nav-phone">📞 081 556 0080</a>
     </nav>
 </header>
-    <section class="tagli">
-    <div class="cut">
-         <div class="product-card" data-aos="fade-up">
-            <div class="product-image">
-                <img src="https://raw.githubusercontent.com/juggsxr/barbieremarinovomero/main/envy.jpeg" alt="Taglio Envy">
+
+<section>
+    <div data-aos="fade-down">
+        <p class="sub">Special Guests</p>
+        <h2>I Nostri Clienti</h2>
+    </div>
+
+    <div class="catalogo-grid">
+        
+        <div class="guest-card" data-aos="fade-up">
+            <div class="guest-image">
+                <img src="https://raw.githubusercontent.com/juggsxr/barbieremarinovomero/main/envy.jpeg" alt="Envy">
             </div>
-            <div class="product-info">
-                <span class="price">€ 20,00</span>
+            <div class="guest-info">
+                <h3 class="guest-name">Envy</h3>
+                <p class="guest-desc">Sfumatura alta e styling personalizzato</p>
             </div>
         </div>
 
-        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="product-image">
-                <img src="https://raw.githubusercontent.com/juggsxr/barbieremarinovomero/main/jlord.jpeg" alt="Taglio professionale a JLord">
+        <div class="guest-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="guest-image">
+                <img src="https://raw.githubusercontent.com/juggsxr/barbieremarinovomero/main/jlord.jpeg" alt="JLord">
             </div>
-            <div class="product-info">
-                <span class="price">€ 20,00</span>
+            <div class="guest-info">
+                <h3 class="guest-name">JLord</h3>
+                <p class="guest-desc">Taglio professionale e cura dei dettagli</p>
             </div>
         </div>
-    </div>
+
+        </div>
 </section>
+
+<footer>
+    <div style="display:flex; justify-content: space-between; align-items: center;">
+        <span>© 2026 Barbiere Vomero Marino. Napoli.</span>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 1000, once: true });</script>
+
 </body>
+</html>
