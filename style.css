@@ -203,7 +203,20 @@ h2 {
     margin-bottom: 15px;
     border-left: 3px solid var(--oro);
 }
+/* CATALAGO - VISUALIZZAZIONE FOTO */
+.cut {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
+}
 
+.product-image img {
+    width: 100%;       /* Fa sì che la foto occupi tutta la card */
+    height: 300px;     /* Altezza fissa per uniformità */
+    object-fit: cover; /* Ritaglia la foto senza deformarla */
+    display: block;
+}
 /* FOOTER */
 footer { 
     padding: 60px 10%; 
