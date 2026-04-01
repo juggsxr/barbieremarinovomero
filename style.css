@@ -51,7 +51,7 @@ header {
 }
 
 .logo-img {
-    height: 55px; /* Questa è l'altezza ideale per la navbar */
+    height: 20px; /* Questa è l'altezza ideale per la navbar */
     width: auto;  /* Mantiene le proporzioni originali */
     transition: transform 0.3s ease;
 }
