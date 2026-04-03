@@ -12,7 +12,12 @@
 }
 
 body { 
-    background: var(--nero); 
+    background-image: url('sfondo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #f0f0f0; 
     color: var(--testo); 
     font-family: 'Inter', sans-serif; 
     margin: 0; 
